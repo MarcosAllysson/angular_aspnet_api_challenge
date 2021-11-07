@@ -40,17 +40,3 @@ npm i -g @angular/cli
 ```
 ng serve
 ```
-
-
-## Endpoints
-- "Products":  
-  * -- GET: http://127.0.0.1:5000/api/v1/product/
-  * -- POST: http://127.0.0.1:5000/api/v1/product/
-  * -- PUT: http://127.0.0.1:5000/api/v1/product/ID/
-  * -- DELETE: http://127.0.0.1:5000/api/v1/product/ID/
-
-- "Brands": 
-  * -- GET: http://127.0.0.1:5000/api/v1/brand/
-  * -- POST: http://127.0.0.1:5000/api/v1/brand/
-  * -- PUT: http://127.0.0.1:5000/api/v1/brand/ID/
-  * -- DELETE: http://127.0.0.1:5000/api/v1/brand/ID/
