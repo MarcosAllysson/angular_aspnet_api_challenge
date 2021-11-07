@@ -1,0 +1,50 @@
+<div class="container">
+  <h4>Add a Brand:</h4>
+  <hr />
+  <form action="">
+    <div class="form-group col-7">
+      <label for="name"> Name: </label>
+      <input type="text" name="name" id="name" class="form-control form-control-sm" [(ngModel)]="brand.name" />
+    </div>
+
+    <div class="form-group col-7">
+      <label for="category"> Category: </label>
+      <input type="text" name="category" id="category" class="form-control form-control-sm" [(ngModel)]="brand.category" />
+    </div>
+
+    <div class="form-group col-7">
+      <label for="location"> Location: </label>
+      <input class="form-control form-control-sm" type="text" name="location" id="location" [(ngModel)]="brand.location">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary" type="button" (click)="add_brand()">
+        Add
+      </button>
+    </div>
+  </form>
+
+  <h4 style="margin-top: 50px">Brands List:</h4>
+  <hr />
+
+  <table class='table table-dark'>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Location</th>
+      <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let brand of brands">
+      <td>{{ brand.id }}</td>
+      <td>{{ brand.name }}</td>
+      <td>{{ brand.category }}</td>
+      <td>{{ brand.location }}</td>
+      <td>
+        <button class="btn btn-warning" (click)="update_brand(brand.id)"> Update </button>
+        <button class="btn btn-danger" (click)="delete_brand(brand.id)"> Delete </button>
+      </td>
+    </tr>
+  </table>
+</div>

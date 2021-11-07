@@ -25,8 +25,11 @@ namespace Store
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Cors
+            services.AddCors();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddControllers();
+            services.AddControllers(options => options.EnableEndpointRouting = false);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Store", Version = "v1" });
@@ -42,6 +45,10 @@ namespace Store
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Store v1"));
             }
+
+            // Cors
+            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
+            app.UseMvc();
 
             app.UseRouting();
 
