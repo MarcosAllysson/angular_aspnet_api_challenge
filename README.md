@@ -10,7 +10,7 @@
   cd Store
 ```
 
-* Then:
+* Then, and wait for server on http://127.0.0.1:5000/:
 ```
   dotnet run
 ```
